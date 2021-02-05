@@ -3,7 +3,7 @@
 describe("first test describe", () => {
 
     beforeEach("code for every test", () => {
-
+        // will be runned before every test below
     })
 
     it("first test with locators", () => {
@@ -44,7 +44,7 @@ describe("first test describe", () => {
 
     })
 
-    it.only('second test', () => {
+    it('second test', () => {
         cy.visit('/')
         cy.contains('Forms').click()
         cy.contains('Form Layouts').click()
@@ -62,7 +62,25 @@ describe("first test describe", () => {
             .parents('form')
             .find('nb-checkbox')
             .click()
+
+        cy.contains('nb-card', 'Horizontal form')
+            .find('[type="email"]')
+            .parents('form')
+            .should('contain', 'Email')
+
     })
 
+
+    it('third test', () => {
+
+        cy.contains('Basic form')
+            .parents('nb-card')
+            .find('nb-checkbox')
+            .click()
+            .click()
+            .click()
+
+
+    })
 
 })
