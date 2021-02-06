@@ -3,9 +3,16 @@
 
 describe('test description', () => {
 
-    it('first test', () => {
+    beforeEach(() => {
 
         cy.visit('/')
+
+    })
+    
+
+    it('first test', () => {
+
+        // cy.visit('/')
 
         cy.contains('Layout')
             .click()

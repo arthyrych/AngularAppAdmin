@@ -3,12 +3,15 @@
 describe("first test describe", () => {
 
     beforeEach("code for every test", () => {
-        // will be runned before every test below
+
+        cy.visit('/')
+
     })
+    
 
     it("first test with locators", () => {
 
-        cy.visit('/')
+        // cy.visit('/')
         cy.contains('Forms').click()
         cy.contains('Form Layouts').click()
 
@@ -44,8 +47,10 @@ describe("first test describe", () => {
 
     })
 
+
     it('second test', () => {
-        cy.visit('/')
+
+        // cy.visit('/')
         cy.contains('Forms').click()
         cy.contains('Form Layouts').click()
 
