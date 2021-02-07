@@ -11,7 +11,6 @@ describe("first test describe", () => {
 
     it("first test with locators", () => {
 
-        // cy.visit('/')
         cy.contains('Forms').click()
         cy.contains('Form Layouts').click()
 
@@ -50,7 +49,6 @@ describe("first test describe", () => {
 
     it('second test', () => {
 
-        // cy.visit('/')
         cy.contains('Forms').click()
         cy.contains('Form Layouts').click()
 

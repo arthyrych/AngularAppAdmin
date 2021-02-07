@@ -12,7 +12,6 @@ describe('test description', () => {
 
     it('first test', () => {
 
-        // cy.visit('/')
 
         cy.contains('Layout')
             .click()
