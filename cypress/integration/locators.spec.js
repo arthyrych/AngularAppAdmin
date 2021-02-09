@@ -1,16 +1,16 @@
 /// <reference types="cypress" />
 
 
-describe("first test suite", () => {
+describe('test suite with locators', () => {
 
-    beforeEach("code for every test", () => {
+    beforeEach('code for every test', () => {
 
         cy.visit('/')
 
     })
     
 
-    it("types of locators", () => {
+    it('types of locators', () => {
 
         cy.contains('Forms').click()
         cy.contains('Form Layouts').click()
@@ -30,7 +30,7 @@ describe("first test suite", () => {
         // 5) by Attribute name with value
         cy.get('[placeholder="Email"]')
 
-        // 6) by Class value
+        // 6) by Class value (as by Attribute name with value)
         cy.get('[class="input-full-width size-medium shape-rectangle"]')
 
         // 7) by Tag name and Attribute with value
@@ -42,7 +42,7 @@ describe("first test suite", () => {
         // 9) by Tag Name, Attribute with value, ID and class name
         cy.get('input[placeholder="Email"]#inputEmail1.input-full-width')
 
-        // 10) the most recommended way by Cypress (creating test attributes)
+        // 10) the most recommended way by Cypress (creating own test attributes)
         cy.get('[data-cy="imputEmail1"]')
 
     })
