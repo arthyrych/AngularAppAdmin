@@ -35,15 +35,17 @@ describe('test suite with the dom moving', () => {
             .find('nb-checkbox') // looking for the child element again
             .click()
 
+        // another example with getting the element through another unique element
         cy.contains('nb-card', 'Horizontal form')
             .find('[type="email"]')
-            .parents('form')
-            .should('contain', 'Email')
 
     })
 
 
     it('second test with moving through the dom', () => {
+
+        cy.contains('Forms').click()
+        cy.contains('Form Layouts').click()
 
         cy.contains('Basic form')
             .parents('nb-card')
