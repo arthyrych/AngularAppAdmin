@@ -38,7 +38,8 @@ describe('test suite with then and wrap methods', () => {
 
 
         // cypress example 
-        cy.contains('nb-card', 'Using the Grid').then( firstForm => {
+        cy.contains('nb-card', 'Using the Grid').then( firstForm => { 
+            // after then method we use jQuery and Chai methods
             const emailLabelFirst = firstForm.find('[for="inputEmail1"]').text()
             const paswordLabelFirst = firstForm.find('[for="inputPassword2"]').text()
             expect(emailLabelFirst).to.equal('Email')
@@ -50,8 +51,14 @@ describe('test suite with then and wrap methods', () => {
                 // expect(emailLabelFirst).to.equal(emailLabelSecond)
                 expect(paswordLabelFirst).to.equal(passwordLabelSecond)
 
-            })
+                // after wrap method we use Cypress methods back
+                cy.wrap(firstForm).find('[for="inputEmail1"]').should('contain', 'Email')
+                cy.wrap(firstForm).find('[for="inputPassword2"]').should('contain', 'Password')
 
+                cy.wrap(secondForm).find('[for="exampleInputEmail1"]').should('contain', 'Email address')
+                cy.wrap(secondForm).find('[for="exampleInputPassword1"]').should('contain', 'Password')
+
+            })
 
         })
 
