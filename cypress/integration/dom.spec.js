@@ -44,6 +44,7 @@ describe('test suite with the dom moving', () => {
 
     it('second test with moving through the dom', () => {
 
+        // own example
         cy.contains('Forms').click()
         cy.contains('Form Layouts').click()
 
