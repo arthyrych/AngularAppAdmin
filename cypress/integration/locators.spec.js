@@ -34,16 +34,16 @@ describe('test suite with locators', () => {
         // 6) by Class value (as by Attribute name with value)
         cy.get('[class="input-full-width size-medium shape-rectangle"]')
 
-        // 7) by Tag name and Attribute with value
+        // 7) (complex) by Tag name and Attribute with value
         cy.get('input[placeholder="Email"]')
 
-        // 8) by two different Attributes
+        // 8) (complex) by two different Attributes
         cy.get('[placeholder="Email"][fullwidth]')
 
-        // 9) by Tag Name, Attribute with value, ID and class name
+        // 9) (complex by Tag Name, Attribute with value, ID and class name
         cy.get('input[placeholder="Email"]#inputEmail1.input-full-width')
 
-        // 10) the most recommended way by Cypress (creating own test attributes)
+        // 10) (complex) the most recommended way by Cypress (creating own test attributes)
         cy.get('[data-cy="imputEmail1"]')
 
     })
