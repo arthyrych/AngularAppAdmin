@@ -44,7 +44,6 @@ describe('checkbox and radio button test suite', ()=> {
                     .should('be.disabled')
             })
 
-
     })
 
 
