@@ -1,16 +1,11 @@
 /// <reference types="cypress" />
 
-
 describe('test suite with locators', () => {
-    
 
     beforeEach('code for every test', () => {
-
         cy.visit('/')
-
     })
     
-
     it('types of locators', () => {
 
         cy.contains('Forms').click()
@@ -45,7 +40,5 @@ describe('test suite with locators', () => {
 
         // 10) (complex) the most recommended way by Cypress (creating own test attributes)
         cy.get('[data-cy="imputEmail1"]')
-
     })
-
 })

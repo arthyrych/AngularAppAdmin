@@ -1,15 +1,10 @@
 /// <reference types="cypress" />
 
-
 describe('test suite with the dom moving', () => {
 
-
     beforeEach(() => {
-
         cy.visit('/')
-
     })
-
 
     it('first test with moving through the dom', () => {
 
@@ -38,9 +33,7 @@ describe('test suite with the dom moving', () => {
         // another example with getting the element through another unique element
         cy.contains('nb-card', 'Horizontal form')
             .find('[type="email"]')
-
     })
-
 
     it('second test with moving through the dom', () => {
 
@@ -54,7 +47,5 @@ describe('test suite with the dom moving', () => {
             .click()
             .click()
             .click()
-
     })
-    
 })

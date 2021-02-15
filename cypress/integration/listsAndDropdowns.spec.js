@@ -1,14 +1,10 @@
 /// <reference types="cypress" />
 
-
 describe('lists and drowdowns test suite', ()=> {
 
     beforeEach(()=> {
-
         cy.visit('/')
-
     })
-
 
     it('some', ()=> {
 
@@ -18,5 +14,4 @@ describe('lists and drowdowns test suite', ()=> {
         cy.get('nb-layout-header nav').should('have.css', 'background-color', 'rgb(34, 43, 69)')
 
     })
-
 })

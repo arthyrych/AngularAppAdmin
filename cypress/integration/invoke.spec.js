@@ -1,15 +1,10 @@
 /// <reference types="cypress" />
 
-
 describe('invoke method test suite', ()=> {
 
-
     beforeEach(()=> {
-
         cy.visit('/')
-
     })
-
 
     it('invoke method test', ()=> {
 
@@ -50,7 +45,5 @@ describe('invoke method test suite', ()=> {
                 cy.get('nb-calendar-day-picker').contains('15').click()
                 cy.wrap(input).invoke('prop', 'value').should('contain', 'Feb 15, 2021')
             })
-
     })
-
 })

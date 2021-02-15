@@ -1,15 +1,10 @@
 /// <reference types="cypress" />
 
-
 describe('checkbox and radio button test suite', ()=> {
 
-
     beforeEach(()=> {
-
         cy.visit('/')
-
     })
-
 
     it('radio button', ()=> {
 
@@ -43,9 +38,7 @@ describe('checkbox and radio button test suite', ()=> {
                     .eq(2)
                     .should('be.disabled')
             })
-
     })
-
 
     it('checkbox', ()=> {
 
@@ -57,7 +50,5 @@ describe('checkbox and radio button test suite', ()=> {
 
         // to uncheck you need to use click method (can uncheck the only one element per time)
         cy.get('[type="checkbox"]').eq(0).click({force: true}).should('not.be.checked')
-
     })
-
 })
