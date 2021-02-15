@@ -41,4 +41,5 @@ describe('test suite with locators', () => {
         // 10) (complex) the most recommended way by Cypress (creating own test attributes)
         cy.get('[data-cy="imputEmail1"]')
     })
+    
 })

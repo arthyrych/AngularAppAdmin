@@ -48,4 +48,5 @@ describe('test suite with the dom moving', () => {
             .click()
             .click()
     })
+    
 })
