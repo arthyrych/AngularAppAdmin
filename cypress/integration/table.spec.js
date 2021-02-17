@@ -11,11 +11,55 @@ describe ('table test suite', ()=> {
         cy.contains('Tables & Data').click()
         cy.contains('Smart Table').click()
 
+        // 1 example
         cy.get('tbody').contains('tr', 'Larry').then( tableRow => {
             cy.wrap(tableRow).find('.nb-edit').click()
-            cy.wrap(tableRow).find('[placeholder="Age"]').type('25')
+            cy.wrap(tableRow).find('[placeholder="Age"]').clear().type('25')
             cy.wrap(tableRow).find('.nb-checkmark').click()
             cy.wrap(tableRow).find('td').eq(6).should('contain', '25')
+       })
+
+       // 2 example (my own)
+       cy.get('thead').find('.nb-plus').click()
+       cy.get('thead').find('tr').eq(2).then( tableRow => {
+           cy.wrap(tableRow).find('[placeholder="First Name"]').type('Artem')
+           cy.wrap(tableRow).find('[placeholder="Last Name"]').type('Hyrych')
+           cy.wrap(tableRow).find('[class="nb-checkmark"]').click()
+       })
+
+       cy.get('tbody').find('tr').eq(0).then( tableRowUpdated => {
+           cy.wrap(tableRowUpdated).find('td').eq(2).should('contain', 'Artem')
+           cy.wrap(tableRowUpdated).find('td').eq(3).should('contain', 'Hyrych')
+       })
+
+       // 3 example 
+       cy.get('thead').find('.nb-plus').click()
+       cy.get('thead').find('tr').eq(2).then( tableRow => {
+           cy.wrap(tableRow).find('[placeholder="First Name"]').type('Artem2')
+           cy.wrap(tableRow).find('[placeholder="Last Name"]').type('Hyrych2')
+           cy.wrap(tableRow).find('[class="nb-checkmark"]').click()
+       })
+
+       cy.get('tbody tr').first().find('td').then( tableColumns => {
+           cy.wrap(tableColumns).eq(2).should('contain', 'Artem2')
+           cy.wrap(tableColumns).eq(3).should('contain', 'Hyrych2')
+       })
+
+       // 4 example
+       const age = [20, 30, 40, 200]
+
+       cy.wrap(age).each( age => {
+            cy.get('thead [placeholder="Age"]').clear().type(age)
+            cy.wait(300)
+            cy.get('tbody tr').each( tableRow => {
+                if(age == 200) {
+                    cy.wrap(tableRow).should('contain', 'No data found')
+                } else {
+                    cy.wrap(tableRow).find('td').eq(6).should('contain', age)
+                }
+        })
+
+
        })
 
     })
