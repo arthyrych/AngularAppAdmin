@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('datepicker test suite', ()=> {
 
     beforeEach(()=> {

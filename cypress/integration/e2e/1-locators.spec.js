@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('test suite with locators', () => {
 
     beforeEach('code for every test', () => {

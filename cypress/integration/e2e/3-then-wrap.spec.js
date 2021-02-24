@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('test suite with then and wrap methods', () => {
 
     beforeEach(() => {

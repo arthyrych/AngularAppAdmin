@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe ('popup, tooltip, dialog box test suite', ()=> {
 
     beforeEach(()=> {

@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe ('table test suite', ()=> {
 
     beforeEach(()=> {

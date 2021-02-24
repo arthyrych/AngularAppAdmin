@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('checkbox and radio button test suite', ()=> {
 
     beforeEach(()=> {

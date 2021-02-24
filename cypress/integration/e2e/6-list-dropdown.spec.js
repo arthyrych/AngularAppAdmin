@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('lists and drowdowns test suite', ()=> {
 
     beforeEach(()=> {

@@ -1,14 +1,14 @@
-/// <reference types="cypress" />
+/// <reference types="Cypress" />
 
-import { onDatepickerPage } from "../support/pageObjects/datepickerPage"
-import { onFormLayoutsPage } from "../support/pageObjects/formLayoutsPage"
-import { navigateTo } from "../support/pageObjects/navigationPage"
-import { onSmartTablePage } from "../support/pageObjects/smartTablePage"
+import { onDatepickerPage } from "../../support/pageObjects/datepickerPage"
+import { onFormLayoutsPage } from "../../support/pageObjects/formLayoutsPage"
+import { navigateTo } from "../../support/pageObjects/navigationPage"
+import { onSmartTablePage } from "../../support/pageObjects/smartTablePage"
 
 describe('page object test suite', ()=> {
 
     beforeEach('open app', ()=> {
-        cy.visit('/')
+        cy.openHomePage()
     })
 
     it('verify navigations across the pages', ()=> {
@@ -19,7 +19,7 @@ describe('page object test suite', ()=> {
         navigateTo.tooltipPage()
     })
 
-    it.only('should submit Inline and Basic form and select tomorrow date in the calendar', ()=> {
+    it('should submit Inline and Basic form and select tomorrow date in the calendar', ()=> {
         navigateTo.formLayoutsPage()
         onFormLayoutsPage.submitInlineFormWithNameAndEmail('Artem', 'test@test.com')
         onFormLayoutsPage.submitBasicFormWithEmailAndPass('test@test.com', 'fakepass')
