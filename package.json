@@ -28,9 +28,9 @@
     "prepush": "npm run lint:ci",
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
     "cypress:run": "npx cypress run --headless",
-    "cypress:run:chrome": "npm run cypress:run --browser chrome",
-    "cypress:run:firefox": "npm run cypress:run --browser firefox",
-    "cypress:run:cross": "npm run cypress:run --browser firefox & npm run cypress:run --browser chrome"
+    "cypress:run:chrome": "npm run cypress:run -- --browser chrome",
+    "cypress:run:firefox": "npm run cypress:run -- --browser firefox",
+    "cypress:run:cross": "npm run cypress:run -- --browser firefox & npm run cypress:run -- --browser chrome"
   },
   "dependencies": {
     "@agm/core": "^1.1.0",
