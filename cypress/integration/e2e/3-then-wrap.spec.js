@@ -1,13 +1,12 @@
-describe('test suite with then and wrap methods', () => {
+import { navigateTo } from "../../support/pageObjects/navigationPage"
 
-    beforeEach(() => {
-        cy.visit('/')
-    })
+describe('test suite with then and wrap methods', () => {
     
     it('then and wrap methods', () => {
 
-        cy.contains('Forms').click()
-        cy.contains('Form Layouts').click()
+        cy.openHomePage()
+
+        navigateTo.formLayoutsPage()
 
         // basic/simple example
         cy.contains('nb-card', 'Using the Grid').find('[for="inputEmail1"]').should('contain', 'Email')
@@ -15,6 +14,7 @@ describe('test suite with then and wrap methods', () => {
 
         cy.contains('nb-card', 'Basic form').find('[for="exampleInputEmail1"]').should('contain', 'Email address')
         cy.contains('nb-card', 'Basic form').find('[for="exampleInputPassword1"]').should('contain', 'Password')
+
 
         // selenium example (doesn't work)
         // const firstForm = cy.contains('nb-card', 'Using the Grid')
@@ -25,6 +25,7 @@ describe('test suite with then and wrap methods', () => {
 
         // secondForm.find('[for="exampleInputEmail1"]').should('contain', 'Email address')
         // secondForm.find('[for="exampleInputPassword1"]').should('contain', 'Password')
+
 
         // cypress example 
         cy.contains('nb-card', 'Using the Grid').then( firstForm => { 
@@ -37,7 +38,7 @@ describe('test suite with then and wrap methods', () => {
             cy.contains('nb-card', 'Basic form').then( secondForm => {
                 const emailLabelSecond = secondForm.find('[for="exampleInputEmail1"]').text()
                 const passwordLabelSecond = secondForm.find('[for="exampleInputPassword1"]').text()
-                // expect(emailLabelFirst).to.equal(emailLabelSecond)
+                expect(emailLabelSecond).to.equal('Email address')
                 expect(paswordLabelFirst).to.equal(passwordLabelSecond)
 
                 // after wrap method we use Cypress methods back

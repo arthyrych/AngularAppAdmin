@@ -1,13 +1,12 @@
-describe('test suite with the dom moving', () => {
+import { navigateTo } from "../../support/pageObjects/navigationPage"
 
-    beforeEach(() => {
-        cy.visit('/')
-    })
+describe('test suite with the dom moving', () => {
 
     it('first test with moving through the dom', () => {
 
-        cy.contains('Forms').click()
-        cy.contains('Form Layouts').click()
+        cy.openHomePage()
+
+        navigateTo.formLayoutsPage()
 
         // created own locator using Attribute with value
         // finding this unique locator
@@ -22,10 +21,10 @@ describe('test suite with the dom moving', () => {
         // travelling through the dom using the unique element
         cy.get('#inputEmail3')
             .parents('form') // moving to the parent element
-            .find('button') // looking for the child element
-            .should('contain', 'Sign in') // assertion
+            .find('button') // moving to the child element
+            .should('contain', 'Sign in') // asserting the child element
             .parents('form') // moving to the parent element again
-            .find('nb-checkbox') // looking for the child element again
+            .find('nb-checkbox') // moving to the child element again
             .click()
 
         // another example with getting the element through another unique element
@@ -35,15 +34,13 @@ describe('test suite with the dom moving', () => {
 
     it('second test with moving through the dom', () => {
 
-        // own example
-        cy.contains('Forms').click()
-        cy.contains('Form Layouts').click()
+        cy.openHomePage()
+
+        navigateTo.formLayoutsPage()
 
         cy.contains('Basic form')
             .parents('nb-card')
             .find('nb-checkbox')
-            .click()
-            .click()
             .click()
     })
     

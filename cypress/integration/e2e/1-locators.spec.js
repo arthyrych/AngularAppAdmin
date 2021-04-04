@@ -1,13 +1,12 @@
+import { navigateTo } from "../../support/pageObjects/navigationPage"
+
 describe('test suite with locators', () => {
-
-    beforeEach('code for every test', () => {
-        cy.visit('/')
-    })
     
-    it('types of locators', () => {
+    it('check different types of locators', () => {
 
-        cy.contains('Forms').click()
-        cy.contains('Form Layouts').click()
+        cy.openHomePage()
+
+        navigateTo.formLayoutsPage()
 
         // 1) by Tag Name
         cy.get('input')
@@ -37,7 +36,7 @@ describe('test suite with locators', () => {
         cy.get('input[placeholder="Email"]#inputEmail1.input-full-width')
 
         // 10) the most recommended way by Cypress (creating own test attributes)
-        cy.get('[data-cy="imputEmail1"]')
+        cy.get('[data-cy="inputEmail1"]')
     })
     
 })

@@ -1,13 +1,12 @@
-describe('invoke method test suite', ()=> {
+import { navigateTo } from "../../support/pageObjects/navigationPage"
 
-    beforeEach(()=> {
-        cy.visit('/')
-    })
+describe('invoke method test suite', ()=> {
 
     it('invoke method test', ()=> {
 
-        cy.contains('Forms').click()
-        cy.contains('Form Layouts').click()
+        cy.openHomePage()
+
+        navigateTo.formLayoutsPage()
 
         // 1 example
         cy.get('[for="exampleInputEmail1"]').should('contain', 'Email address')
