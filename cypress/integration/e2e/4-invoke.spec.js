@@ -33,14 +33,13 @@ describe('invoke method test suite', ()=> {
             })
 
         // 5 example
-        cy.contains('Datepicker').click()
+        navigateTo.datepickerPage()
 
-        cy.contains('nb-card', 'Common Datepicker')
-            .find('input')
-            .then( input => {
+        cy.contains('nb-card', 'Common Datepicker').find('input').then( input => {
+                let selectedDay = 15
                 cy.wrap(input).click()
-                cy.get('nb-calendar-day-picker').contains('15').click()
-                cy.wrap(input).invoke('prop', 'value').should('contain', 'Feb 15, 2021')
+                cy.get('nb-calendar-day-picker').contains(selectedDay).click()
+                cy.wrap(input).invoke('prop', 'value').should('contain', selectedDay)
             })
 
     })

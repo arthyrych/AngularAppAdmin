@@ -1,15 +1,11 @@
 describe('lists and drowdowns test suite', ()=> {
 
-    beforeEach(()=> {
-        cy.visit('/')
-    })
-
     it('lists and drowdowns', ()=> {
+
+        cy.openHomePage()
 
         // first (one element)
         cy.get('nav nb-select').click()
-        // the one below will not work
-        //cy.contains('.options-list', 'Dark').click()
         cy.get('.options-list').contains('Dark').click()
         cy.get('nav nb-select').should('contain', 'Dark')
         cy.get('nb-layout-header nav').should('have.css', 'background-color', 'rgb(34, 43, 69)')

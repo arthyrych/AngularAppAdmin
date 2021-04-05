@@ -1,13 +1,12 @@
-describe ('table test suite', ()=> {
+import { navigateTo } from "../../support/pageObjects/navigationPage"
 
-    beforeEach(()=> {
-        cy.visit('/')
-    })
+describe ('table test suite', ()=> {
 
     it('table test', ()=> {
 
-        cy.contains('Tables & Data').click()
-        cy.contains('Smart Table').click()
+        cy.openHomePage()
+
+        navigateTo.smartTablePage()
 
         // 1 example
         cy.get('tbody').contains('tr', 'Larry').then( tableRow => {

@@ -1,13 +1,12 @@
-describe('checkbox and radio button test suite', ()=> {
+import { navigateTo } from "../../support/pageObjects/navigationPage"
 
-    beforeEach(()=> {
-        cy.visit('/')
-    })
+describe('checkbox and radio button test suite', ()=> {
 
     it('radio button', ()=> {
 
-        cy.contains('Forms').click()
-        cy.contains('Form Layouts').click()
+        cy.openHomePage()
+
+        navigateTo.formLayoutsPage()
 
         // first way (simple)
         cy.contains('nb-card', 'Using the Grid').find('[type="radio"]').eq(0).check({force: true}).should('be.checked')
@@ -16,20 +15,10 @@ describe('checkbox and radio button test suite', ()=> {
         cy.contains('nb-card', 'Using the Grid').find('[type="radio"]').eq(2).should('be.disabled')
 
         // second way (recommended)
-        cy.contains('nb-card', 'Using the Grid')
-            .find('[type="radio"]')
-            // taking 3 elements to jQuery object
-            .then( radioButtons => {
-                // checking the first checkbox 
+        cy.contains('nb-card', 'Using the Grid').find('[type="radio"]').then( radioButtons => {
                 cy.wrap(radioButtons).eq(0).check({force: true}).should('be.checked')
-
-                // checking the second checkbox
                 cy.wrap(radioButtons).eq(1).check({force: true})
-
-                // verifying the first checkbox is unchecked 
                 cy.wrap(radioButtons).eq(0).should('not.be.checked')
-
-                // verifying the third checkbox is disabled
                 cy.wrap(radioButtons).eq(2).should('be.disabled')
         })
 
@@ -37,8 +26,9 @@ describe('checkbox and radio button test suite', ()=> {
 
     it('checkbox', ()=> {
 
-        cy.contains('Modal & Overlays').click()
-        cy.contains('Toastr').click()
+        cy.openHomePage()
+
+        navigateTo.toasterPage()
 
         // check method only checks (can check all elements at once)
         cy.get('[type="checkbox"]').check({force: true}).should('be.checked')
