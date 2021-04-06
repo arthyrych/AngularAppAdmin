@@ -16,7 +16,7 @@ describe ('table test suite', ()=> {
             cy.wrap(tableRow).find('td').eq(6).should('contain', '25')
        })
 
-       // 2 example (my own)
+       // 2 example 
        cy.get('thead').find('.nb-plus').click()
        cy.get('thead').find('tr').eq(2).then( tableRow => {
            cy.wrap(tableRow).find('[placeholder="First Name"]').type('Artem')
@@ -24,25 +24,12 @@ describe ('table test suite', ()=> {
            cy.wrap(tableRow).find('[class="nb-checkmark"]').click()
        })
 
-       cy.get('tbody').find('tr').eq(0).then( tableRowUpdated => {
-           cy.wrap(tableRowUpdated).find('td').eq(2).should('contain', 'Artem')
-           cy.wrap(tableRowUpdated).find('td').eq(3).should('contain', 'Hyrych')
-       })
-
-       // 3 example 
-       cy.get('thead').find('.nb-plus').click()
-       cy.get('thead').find('tr').eq(2).then( tableRow => {
-           cy.wrap(tableRow).find('[placeholder="First Name"]').type('Artem2')
-           cy.wrap(tableRow).find('[placeholder="Last Name"]').type('Hyrych2')
-           cy.wrap(tableRow).find('[class="nb-checkmark"]').click()
-       })
-
        cy.get('tbody tr').first().find('td').then( tableColumns => {
-           cy.wrap(tableColumns).eq(2).should('contain', 'Artem2')
-           cy.wrap(tableColumns).eq(3).should('contain', 'Hyrych2')
+           cy.wrap(tableColumns).eq(2).should('contain', 'Artem')
+           cy.wrap(tableColumns).eq(3).should('contain', 'Hyrych')
        })
 
-       // 4 example
+       // 3 example
        const age = [20, 30, 40, 200]
 
        cy.wrap(age).each( age => {
