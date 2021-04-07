@@ -1,13 +1,12 @@
-describe ('popup, tooltip, dialog box test suite', ()=> {
+import { navigateTo } from "../../support/pageObjects/navigationPage"
 
-    beforeEach(()=> {
-        cy.visit('/')
-    })
+describe ('popup, tooltip, dialog box test suite', ()=> {
 
     it('tooltip', ()=> {
 
-        cy.contains('Modal & Overlays').click()
-        cy.contains('Tooltip').click()
+        cy.openHomePage()
+
+        navigateTo.tooltipPage()
 
         cy.contains('nb-card', 'Colored Tooltips').contains('Default').click()
         cy.get('nb-tooltip').should('contain', 'This is a tooltip')
@@ -15,8 +14,9 @@ describe ('popup, tooltip, dialog box test suite', ()=> {
 
     it('browser dialog box', ()=> {
 
-        cy.contains('Tables & Data').click()
-        cy.contains('Smart Table').click()
+        cy.openHomePage()
+
+        navigateTo.smartTablePage()
 
         // 1 example
         cy.get('tbody tr').first().find('.nb-trash').click()

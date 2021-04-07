@@ -1,8 +1,6 @@
-describe('datepicker test suite', ()=> {
+import { navigateTo } from "../../support/pageObjects/navigationPage"
 
-    beforeEach(()=> {
-        cy.visit('/')
-    })
+describe('datepicker test suite', ()=> {
 
     it('datepicker test', ()=> {
 
@@ -25,8 +23,9 @@ describe('datepicker test suite', ()=> {
             return dateAssert
         }
 
-        cy.contains('Forms').click()
-        cy.contains('Datepicker').click()
+        cy.openHomePage()
+
+        navigateTo.datepickerPage()
         
         cy.contains('nb-card', 'Common Datepicker').find('input').then( input => {
             cy.wrap(input).click()
