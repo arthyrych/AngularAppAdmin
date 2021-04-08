@@ -3,9 +3,7 @@ import { navigateTo } from "../../support/pageObjects/navigationPage"
 describe('test suite with the dom moving', () => {
 
     it('first test with moving through the dom', () => {
-
         cy.openHomePage()
-
         navigateTo.formLayoutsPage()
 
         // created own locator using Attribute with value
@@ -33,9 +31,7 @@ describe('test suite with the dom moving', () => {
     })
 
     it('second test with moving through the dom', () => {
-
         cy.openHomePage()
-
         navigateTo.formLayoutsPage()
 
         cy.contains('Basic form')

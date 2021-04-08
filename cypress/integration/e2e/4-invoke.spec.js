@@ -3,9 +3,7 @@ import { navigateTo } from "../../support/pageObjects/navigationPage"
 describe('invoke method test suite', ()=> {
 
     it('invoke method test', ()=> {
-
         cy.openHomePage()
-
         navigateTo.formLayoutsPage()
 
         // 1 example

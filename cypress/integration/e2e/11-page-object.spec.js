@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 import { onDatepickerPage } from "../../support/pageObjects/datepickerPage"
 import { onFormLayoutsPage } from "../../support/pageObjects/formLayoutsPage"
 import { navigateTo } from "../../support/pageObjects/navigationPage"
@@ -7,11 +5,8 @@ import { onSmartTablePage } from "../../support/pageObjects/smartTablePage"
 
 describe('page object test suite', ()=> {
 
-    beforeEach('open app', ()=> {
-        cy.openHomePage()
-    })
-
     it('verify navigations across the pages', ()=> {
+        cy.openHomePage()
         navigateTo.formLayoutsPage()
         navigateTo.datepickerPage()
         navigateTo.toasterPage()
@@ -20,6 +15,7 @@ describe('page object test suite', ()=> {
     })
 
     it('should submit Inline and Basic form and select tomorrow date in the calendar', ()=> {
+        cy.openHomePage()
         navigateTo.formLayoutsPage()
         onFormLayoutsPage.submitInlineFormWithNameAndEmail('Artem', 'test@test.com')
         onFormLayoutsPage.submitBasicFormWithEmailAndPass('test@test.com', 'fakepass')

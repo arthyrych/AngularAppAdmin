@@ -3,9 +3,7 @@ import { navigateTo } from "../../support/pageObjects/navigationPage"
 describe('checkbox and radio button test suite', ()=> {
 
     it('radio button', ()=> {
-
         cy.openHomePage()
-
         navigateTo.formLayoutsPage()
 
         // first way (simple)
@@ -25,9 +23,7 @@ describe('checkbox and radio button test suite', ()=> {
     })
 
     it('checkbox', ()=> {
-
         cy.openHomePage()
-
         navigateTo.toasterPage()
 
         // check method only checks (can check all elements at once)

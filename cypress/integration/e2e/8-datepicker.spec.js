@@ -24,7 +24,6 @@ describe('datepicker test suite', ()=> {
         }
 
         cy.openHomePage()
-
         navigateTo.datepickerPage()
         
         cy.contains('nb-card', 'Common Datepicker').find('input').then( input => {

@@ -3,9 +3,7 @@ import { navigateTo } from "../../support/pageObjects/navigationPage"
 describe ('popup, tooltip, dialog box test suite', ()=> {
 
     it('tooltip', ()=> {
-
         cy.openHomePage()
-
         navigateTo.tooltipPage()
 
         cy.contains('nb-card', 'Colored Tooltips').contains('Default').click()
@@ -13,9 +11,7 @@ describe ('popup, tooltip, dialog box test suite', ()=> {
     })
 
     it('browser dialog box', ()=> {
-
         cy.openHomePage()
-
         navigateTo.smartTablePage()
 
         // 1 example

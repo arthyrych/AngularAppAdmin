@@ -1,7 +1,6 @@
 describe('lists and drowdowns test suite', ()=> {
 
     it('lists and drowdowns', ()=> {
-
         cy.openHomePage()
 
         // first (one element)

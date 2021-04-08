@@ -3,9 +3,7 @@ import { navigateTo } from "../../support/pageObjects/navigationPage"
 describe('test suite with then and wrap methods', () => {
     
     it('then and wrap methods', () => {
-
         cy.openHomePage()
-
         navigateTo.formLayoutsPage()
 
         // basic/simple example

@@ -3,9 +3,7 @@ import { navigateTo } from "../../support/pageObjects/navigationPage"
 describe('test suite with locators', () => {
     
     it('check different types of locators', () => {
-
         cy.openHomePage()
-
         navigateTo.formLayoutsPage()
 
         // 1) by Tag Name

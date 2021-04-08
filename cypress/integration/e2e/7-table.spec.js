@@ -3,9 +3,7 @@ import { navigateTo } from "../../support/pageObjects/navigationPage"
 describe ('table test suite', ()=> {
 
     it('table test', ()=> {
-
         cy.openHomePage()
-
         navigateTo.smartTablePage()
 
         // 1 example

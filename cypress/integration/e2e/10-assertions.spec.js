@@ -1,13 +1,11 @@
-describe('assertions test suite', ()=> {
+import { navigateTo } from "../../support/pageObjects/navigationPage"
 
-    beforeEach(()=> {
-        cy.visit('/')
-    })
+describe('assertions test suite', ()=> {
 
     it('assertions', ()=> {
 
-        cy.contains('Forms').click()
-        cy.contains('Form Layouts').click()
+        cy.openHomePage()
+        navigateTo.formLayoutsPage()
 
         // should format
         cy.get('[for="exampleInputEmail1"]')
