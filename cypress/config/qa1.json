@@ -1,0 +1,9 @@
+{
+    "env": {
+        "name": "Artem",
+        "surname": "Hyrych",
+        "email": "test@test.com",
+        "pass": "fakepass",
+        "age": 35
+    }
+}

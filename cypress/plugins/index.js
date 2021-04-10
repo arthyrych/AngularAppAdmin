@@ -1,4 +1,3 @@
-/// <reference types="cypress" />
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
 //
@@ -15,7 +14,24 @@
 /**
  * @type {Cypress.PluginConfig}
  */
+
+// promisified fs module
+const fs = require('fs-extra')
+const path = require('path')
+
+function getConfigurationByFile(file) {
+  const pathToConfigFile = path.resolve('cypress', 'config', `${file}.json`)
+
+  if(!fs.existsSync(pathToConfigFile)){
+    return {}
+  }
+
+  return fs.readJson(pathToConfigFile)
+}
+
 module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
+  // accept a configFile value or use development by default
+  const file = config.env.configFile || 'qa1'
+
+  return getConfigurationByFile(file)
 }
