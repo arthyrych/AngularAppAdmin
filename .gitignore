@@ -43,3 +43,6 @@ Thumbs.db
 # cypress
 /cypress/screenshots
 /cypress/videos
+/cypress/results
+mochawesome-report/
+mochawesome.json

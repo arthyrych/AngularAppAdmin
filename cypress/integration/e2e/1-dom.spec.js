@@ -33,11 +33,7 @@ describe('test suite with the dom moving', () => {
     it('second test with moving through the dom', () => {
         cy.openHomePage()
         navigateTo.formLayoutsPage()
-
-        cy.contains('Basic form')
-            .parents('nb-card')
-            .find('nb-checkbox')
-            .click()
+        cy.contains('Basic form').parents('nb-card').find('nb-checkbox').click()
     })
     
 })
